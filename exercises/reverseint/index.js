@@ -9,20 +9,29 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  // if (Math.sign(n) == -1) {
-  //  console.log(Math.sign(n));
-  // }
-  let str = n.toString();
-  console.log(str);
-  let revstr = reverse(n.toString());
-  if (Math.sign(n) == -1) {
-   revstr = "-" +  revstr;
-  }
-  parseInt(revstr);
-  console.log(parseInt(revstr));
+  let revstr = n.toString().split('').reverse().join('');
+  console.log(parseInt(revstr) * Math.sign(n));
+  return parseInt(revstr) * Math.sign(n);
+
 }
-function reverse(str) {
-  return str.split('').reduce((rev, char) => char + rev, '');
-}
-reverseInt(-58);
+
+//first attempt
+// function reverseInt(n) {
+//   // if (Math.sign(n) == -1) {
+//   //  console.log(Math.sign(n));
+//   // }
+//   let str = n.toString();
+//   console.log(str);
+//   let revstr = reverse(n.toString());
+//   if (Math.sign(n) === -1) {
+//    revstr = "-" +  revstr;
+//   }
+//   console.log(parseInt(revstr));
+//   return parseInt(revstr);
+//
+// }
+// function reverse(str) {
+//   return str.split('').reduce((rev, char) => char + rev, '');
+// }
+reverseInt(-90);
 module.exports = reverseInt;
